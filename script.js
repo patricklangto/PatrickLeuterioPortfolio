@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Add active state to current section in navigation
+    // active state to current section in navigation
     window.addEventListener('scroll', function() {
         const sections = document.querySelectorAll('section[id]');
         const scrollPosition = window.scrollY + 100; // Account for header height
@@ -102,4 +102,5 @@ document.addEventListener('DOMContentLoaded', function() {
             menuToggle.setAttribute('aria-label', 'Open navigation menu');
         }
     });
+
 });
