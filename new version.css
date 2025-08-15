@@ -1,4 +1,4 @@
-﻿body {
+body {
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
     background: #f9f9f9;
@@ -12,37 +12,48 @@ header {
     text-align: center;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box;
 }
 
     header h1 {
         margin: 0;
         font-size: 2.5rem;
         z-index: 2;
+        position: relative;
     }
 
 #menuToggle {
     position: absolute;
     right: 1.5rem;
-    top: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
     background: none;
     border: none;
     color: #fff;
     font-size: 2rem;
     cursor: pointer;
-    z-index: 2;
+    z-index: 1001;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
 }
-
+    #menuToggle:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
 nav#menuBar {
     position: absolute;
     right: 1rem;
-    top: 4rem;
+    top: calc(100% + 0.5rem);
     background: #222;
     border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     padding: 1rem 2rem;
-    z-index: 101;
-    transition: opacity 0.2s;
+    z-index: 1002;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    border: 1px solid #444;
 }
 
     nav#menuBar ul {
@@ -60,10 +71,14 @@ nav#menuBar {
         font-weight: 500;
         font-size: 1.4rem;
         transition: color 0.2s;
+        padding: 0.5rem 0;
+        display: block;
+        border-bottom: 1px solid transparent;
     }
 
         nav#menuBar a:hover {
             color: #5ac8fa;
+            border-bottom-color: #5ac8fa;
         }
 
     nav#menuBar.hidden {
@@ -204,7 +219,7 @@ footer {
     letter-spacing: 1px;
 }
 
-/* Student ID Card Styles */
+
 .studentID {
     display: flex;
     flex-direction: column;
@@ -350,7 +365,7 @@ footer {
     padding: 6px;
 }
 
-/* Responsive adjustments ID card */
+/* Responsive adjustments for ID card */
 @media (max-width: 768px) {
     .studentID
 
@@ -386,7 +401,35 @@ footer {
     width: 170px;
     height: 250px;
 }
+/* Header */
+ header {
+        padding: 1rem 0;
+    }
 
+        header h1 {
+            font-size: 2rem;
+            padding-right: 4rem; 
+        }
+
+    #menuToggle {
+        right: 1rem;
+        top: 50%;
+        font-size: 1.8rem;
+        padding: 0.3rem;
+    }
+
+    nav#menuBar {
+        right: 0.5rem;
+        top: calc(100% + 0.3rem);
+        padding: 0.8rem 1.5rem;
+        min-width: 180px;
+        border-radius: 6px;
+    }
+
+        nav#menuBar a {
+            font-size: 1.2rem;
+            padding: 0.4rem 0;
+        }
 }
 
 @media (max-width: 600px) {
@@ -461,6 +504,36 @@ footer {
         width: 130px;
         height: 200px;
     }
+    header {
+        padding: 0.8rem 0;
+        position: relative;
+    }
+
+        header h1 {
+            font-size: 1.6rem;
+            padding-right: 3.5rem;
+        }
+
+    #menuToggle {
+        right: 0.8rem;
+        font-size: 1.6rem;
+        padding: 0.2rem;
+    }
+
+    nav#menuBar {
+        right: 0.3rem;
+        top: calc(100% + 0.2rem);
+        padding: 0.6rem 1rem;
+        min-width: 160px;
+        max-width: calc(100vw - 1rem);
+    }
+
+        nav#menuBar a {
+            font-size: 1.1rem;
+            padding: 0.3rem 0;
+        }
+
+
 }
 
 /* Extra small screens */
@@ -500,5 +573,23 @@ footer {
         width: 110px;
         height: 180px;
     }
+    header h1 {
+        font-size: 1.4rem;
+        padding-right: 3rem;
+    }
 
+    #menuToggle {
+        right: 0.5rem;
+        font-size: 1.4rem;
+    }
+
+    nav#menuBar {
+        right: 0.2rem;
+        padding: 0.5rem 0.8rem;
+        min-width: 140px;
+    }
+
+        nav#menuBar a {
+            font-size: 1rem;
+        }
 }
