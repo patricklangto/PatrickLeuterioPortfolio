@@ -1,0 +1,503 @@
+﻿body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f9f9f9;
+    color: #222;
+}
+
+header {
+    background: #222;
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        z-index: 2;
+    }
+
+#menuToggle {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+nav#menuBar {
+    position: absolute;
+    right: 1rem;
+    top: 4rem;
+    background: #222;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    padding: 1rem 2rem;
+    z-index: 101;
+    transition: opacity 0.2s;
+}
+
+    nav#menuBar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav#menuBar a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.4rem;
+        transition: color 0.2s;
+    }
+
+        nav#menuBar a:hover {
+            color: #5ac8fa;
+        }
+
+    nav#menuBar.hidden {
+        display: none;
+    }
+
+section {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    padding: 2rem;
+}
+
+h2 {
+    color: black;
+    margin-top: 0;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: rgba(147, 147, 147, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(90, 200, 250, 0.2);
+}
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+.project-img {
+    width: 100%;
+    height: auto;
+    min-height: 180px;
+    max-height: 250px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    border-radius: 0;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+.project-card > div {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #222;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.project-card p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.project-card a {
+    color: #5ac8fa;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+    .project-card a:hover {
+        color: #007aff;
+        text-decoration: underline;
+    }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+input, textarea {
+    padding: 0.6rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+button {
+    background: #5ac8fa;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+    button:hover {
+        background: #007aff;
+    }
+
+#formMessage {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #007aff;
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Student ID Card Styles (merged from finaltest.css) */
+.studentID {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 450px;
+    border-radius: 10px;
+    perspective: 1000px;
+    margin: 2rem auto;
+}
+
+.id-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px #888888;
+}
+
+.studentID:hover .id-container {
+    transform: rotateY(180deg);
+}
+
+.frontid, .backid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.frontid {
+    background-color: #1064a8;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.top {
+    height: 17%;
+    width: 100%;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stilogo {
+    width: 80px;
+    height: auto;
+}
+
+.frontid::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMIujgipM_C529AO8qhPmbFZc_XweX7S55RA&s");
+    background-size: cover;
+    background-position: -120px 80px;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.frontid > * {
+    position: relative;
+    z-index: 1;
+}
+
+.school {
+    font-size: 16px;
+    color: yellow;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+}
+
+.photo {
+    width: 170px;
+    height: 170px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px auto;
+    object-fit: cover;
+}
+
+.studinfo {
+    font-family: Arial, sans-serif;
+    color: white;
+    margin-bottom: 2px;
+    text-align: center;
+    padding: 2px 10px;
+}
+
+    .studinfo#surname {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .studinfo#firstname {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .studinfo#course {
+        font-size: 14px;
+    }
+
+.backid {
+    background-color: #c9c9c9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    transform: rotateY(180deg);
+    font-size: 10px;
+    padding: 10px;
+}
+
+.pic {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    margin: auto;
+}
+.signature {
+    padding: 30px;
+    margin: 2px;
+}
+
+.backid p {
+    padding: 6px;
+}
+
+/* Responsive adjustments for ID card */
+@media (max-width: 768px) {
+    .studentID
+
+{
+    width: 250px;
+    height: 380px;
+    margin: 1.5rem auto;
+}
+
+.photo {
+    width: 140px;
+    height: 140px;
+}
+
+.school {
+    font-size: 14px;
+    padding: 15px;
+}
+
+.studinfo#surname {
+    font-size: 20px;
+}
+
+.studinfo#firstname {
+    font-size: 16px;
+}
+
+.studinfo#course {
+    font-size: 12px;
+}
+
+.pic {
+    width: 170px;
+    height: 250px;
+}
+
+}
+
+@media (max-width: 600px) {
+    .studentID {
+        width: 220px;
+        height: 350px;
+        margin: 1rem auto;
+    }
+
+    .photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .school {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .studinfo#surname {
+        font-size: 18px;
+    }
+
+    .studinfo#firstname {
+        font-size: 14px;
+    }
+
+    .studinfo#course {
+        font-size: 11px;
+    }
+
+    .pic {
+        width: 150px;
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .studentID {
+        width: 200px;
+        height: 320px;
+        margin: 1rem auto;
+    }
+
+    .photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .school {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    .studinfo#surname {
+        font-size: 16px;
+    }
+
+    .studinfo#firstname {
+        font-size: 13px;
+    }
+
+    .studinfo#course {
+        font-size: 10px;
+    }
+
+    .stilogo {
+        width: 60px;
+    }
+
+    .pic {
+        width: 130px;
+        height: 200px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 320px) {
+    .studentID {
+        width: 180px;
+        height: 290px;
+    }
+
+    .photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .school {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .studinfo#surname {
+        font-size: 14px;
+    }
+
+    .studinfo#firstname {
+        font-size: 12px;
+    }
+
+    .studinfo#course {
+        font-size: 9px;
+    }
+
+    .stilogo {
+        width: 50px;
+    }
+
+    .pic {
+        width: 110px;
+        height: 180px;
+    }
+}

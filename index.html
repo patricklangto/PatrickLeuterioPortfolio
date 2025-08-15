@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patrick Leuterio - Portfolio</title>
+    <link rel="stylesheet" href="new version.css" />
+</head>
+<body>
+    <header>
+        <h1>Patrick Leuterio</h1>
+        <button id="menuToggle" aria-label="Open navigation menu">&#9776;</button>
+        <nav id="menuBar" class="hidden">
+            <ul>
+                <li><a href="#home" class="menu-link">Home</a></li>
+                <li><a href="#about" class="menu-link">About</a></li>
+                <li><a href="#projects" class="menu-link">Projects</a></li>
+                <li><a href="#contact" class="menu-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="home">
+        <!-- Space for your picture before About Me section -->
+        <section id="profile-picture" style="text-align: center; padding: 3rem 0;">
+            <!-- Add your picture here -->
+            <img src="Profile.jpg" alt="Patrick Leuterio" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 1rem;">
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Hi! I'm Patrick Leuterio, a passionate developer specializing in web development. I love building beautiful and functional web applications.
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-list">
+                <div class="project-card">
+                    <img src="robot.jpg" alt="Project One Image" class="project-img" />
+                    <div>
+                        <h3>Geoffense</h3>
+                        <p>A bluetooth powered mobile robot built to command the field where precision, control, and ingenuity collide.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="secondproject.jpg" alt="Project Two Image" class="project-img" />
+                    <div>
+                        <h3>School Records Automation System</h3>
+                        <p>school records automation system designed, The front-end application is developed using C#, providing a user-friendly interface for school staff, while the back-end database is managed using MySQL.</p>
+                    </div>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div id="formMessage"></div>
+        </section>
+
+        <!-- Student ID Card Section moved under Contact -->
+        <section id="student-id-card" style="margin: 2rem auto;">
+            <h2 style="text-align: center; margin-bottom: 2rem;">Student ID</h2>
+            <div class="studentID">
+                <div class="id-container">
+                    <div class="frontid">
+                        <div class="top">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/Systems_Technology_Institute.png" alt="STI" class="stilogo">
+                        </div>
+                        <div class="idetails">
+                            <h2 class="school">STI West Negros University</h2>
+                            <img class="photo" src="https://i.pinimg.com/736x/f5/06/44/f5064470ec7296d840bbfd970e9e024b.jpg" alt="Student Photo">
+                            <p class="studinfo" id="surname">Leuterio</p>
+                            <p class="studinfo" id="firstname">Patrick Denyl B.</p>
+                            <p class="studinfo" id="course">BS in Information Technology</p>
+                        </div>
+                    </div>
+                    <div class="backid">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4KROwZFl-yktpdSuLS0R2atjbrS2jEHqU1g&s" alt="tun" class="pic">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Patrick Langto</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
